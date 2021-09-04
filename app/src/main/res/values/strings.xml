@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name" translatable="false">Github User</string>
+    <string name="image_detail_user">Image Detail User</string>
+    <string name="image_fab_user" translatable="false">Image FAB User</string>
+    <string name="image_list_user">Image List User</string>
+    <string name="image_splash_screen">Image Splash Screen</string>
+    <string name="menu_setting">language setting</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="menu_search">Search</string>
+    <string name="username">Username</string>
+    <string name="tag_username">\u0040%1$s</string>
+    <string name="my_username">My Username</string>
+    <string name="text_count_follower">%1$d Follower</string>
+    <string name="text_count_following">%1$d Following</string>
+    <string name="load_data">Load Data</string>
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+</resources>

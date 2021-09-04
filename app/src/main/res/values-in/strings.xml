@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="image_detail_user">Gambar Detail Pengguna</string>
+    <string name="image_list_user">Gambar Daftar Pengguna</string>
+    <string name="image_splash_screen">Gambar Splash Screen</string>
+    <string name="menu_setting">Pengaturan Bahasa</string>
+    <string name="menu_favorite">Favorit</string>
+    <string name="menu_search">Temukan</string>
+    <string name="username">Username</string>
+    <string name="tag_username">\u0040%1$s</string>
+    <string name="my_username">Username Ku</string>
+    <string name="text_count_follower">%1$d Pengikut</string>
+    <string name="text_count_following">%1$d Mengikuti</string>
+    <string name="load_data">Menyiapkan Data</string>
+    <string name="home">Beranda</string>
+    <string name="favorite">Favorit</string>
+
+</resources>
