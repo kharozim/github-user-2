@@ -18,9 +18,9 @@ import com.example.githubuser2.repository.remote.RetrofitClient
 import com.example.githubuser2.ui.views.detail.DetailActivity
 import com.example.githubuser2.ui.views.detail.DetailActivity.Companion.EXTRA_USERNAME
 import com.example.githubuser2.ui.views.favorite.FavoriteActivity
+import com.example.githubuser2.ui.views.reminder.ReminderActivity
 
 class MainActivity : AppCompatActivity() {
-
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private val service by lazy { RetrofitClient.userService }
@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.searchUser("kharozim")
         setObserver()
         setview()
+
     }
 
 
@@ -58,6 +59,9 @@ class MainActivity : AppCompatActivity() {
             R.id.home_menu_fav -> {
                 startActivity(Intent(this, FavoriteActivity::class.java))
             }
+            R.id.home_menu_reminder -> {
+                startActivity(Intent(this, ReminderActivity::class.java))
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -70,7 +74,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                viewModel.searchUser(newText ?: "kharozim")
+                if (newText.isNullOrEmpty()) {
+                    viewModel.searchUser("kharozim")
+                }
                 return false
             }
         })

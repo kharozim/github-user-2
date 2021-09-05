@@ -129,11 +129,10 @@ class DetailActivity : AppCompatActivity() {
             }
             layoutTop.fabFavorite.setOnClickListener {
                 if (!isFavorite) {
-                    viewModel.addFavorite(data)
+                    viewModel.addFavorite(this@DetailActivity, data)
                 } else {
-                    viewModel.removeFavorite(data.id ?: 0)
+                    viewModel.removeFavorite(this@DetailActivity, data.id ?: 0)
                 }
-
             }
         }
         setupViewPager()

@@ -6,6 +6,7 @@
     <string name="menu_setting">Pengaturan Bahasa</string>
     <string name="menu_favorite">Favorit</string>
     <string name="menu_search">Temukan</string>
+    <string name="menu_reminder">Pengaturan Pengingat</string>
     <string name="username">Username</string>
     <string name="tag_username">\u0040%1$s</string>
     <string name="my_username">Username Ku</string>
@@ -14,5 +15,9 @@
     <string name="load_data">Menyiapkan Data</string>
     <string name="home">Beranda</string>
     <string name="favorite">Favorit</string>
+    <string name="success_add_fav">Sukses, Menambah Favorit</string>
+    <string name="success_remove_fav">Sukses, Menghapus Favorit</string>
 
+    <string name="notification_title">Pengingat 09.00 AM</string>
+    <string name="notification_message">Ini adalah Pesan pengingat</string>
 </resources>

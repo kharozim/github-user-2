@@ -1,6 +1,8 @@
 package com.example.githubuser2.ui.views.detail
 
+import android.content.Context
 import androidx.lifecycle.*
+import com.example.githubuser2.R
 import com.example.githubuser2.model.responses.UserItem
 import com.example.githubuser2.model.responses.toUserEntity
 import com.example.githubuser2.repository.contract.UserContractRepo
@@ -98,13 +100,13 @@ class DetailViewModel(
     val onAddFav: LiveData<String>
         get() = _addFav
 
-    fun addFavorite(userItem: UserItem) {
+    fun addFavorite(context: Context, userItem: UserItem) {
         setLoading(true)
         viewModelScope.launch {
             try {
                 val request = userItem.toUserEntity()
                 repository.insertUserFav(request)
-                _addFav.postValue("Success, Add Data")
+                _addFav.postValue(context.getString(R.string.success_add_fav))
                 Timber.tag("addUserFav").d("Success")
                 setLoading(false)
             } catch (e: Exception) {
@@ -120,12 +122,12 @@ class DetailViewModel(
     val onRemoveFav: LiveData<String>
         get() = _removeFav
 
-    fun removeFavorite(userId: Int) {
+    fun removeFavorite(context: Context, userId: Int) {
         setLoading(true)
         viewModelScope.launch {
             try {
                 repository.deleteUserFav(userId)
-                _removeFav.postValue("Success, Delete Data")
+                _removeFav.postValue(context.getString(R.string.success_remove_fav))
                 Timber.tag("removeUserFav").d("Success")
                 setLoading(false)
             } catch (e: Exception) {

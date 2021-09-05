@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:iconSpaceReserved="false">
+
+    <SwitchPreference
+        android:icon="@drawable/ic_notif"
+        android:iconSpaceReserved="false"
+        android:key="@string/reminder_key"
+        android:title="Reminder at 09.00 AM" />
+
+</PreferenceScreen>

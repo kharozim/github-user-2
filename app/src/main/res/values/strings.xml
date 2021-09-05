@@ -4,6 +4,7 @@
     <string name="image_fab_user" translatable="false">Image FAB User</string>
     <string name="image_list_user">Image List User</string>
     <string name="image_splash_screen">Image Splash Screen</string>
+    <string name="menu_reminder">Reminder setting</string>
     <string name="menu_setting">language setting</string>
     <string name="menu_favorite">Favorite</string>
     <string name="menu_search">Search</string>
@@ -15,4 +16,13 @@
     <string name="load_data">Load Data</string>
     <string name="home">Home</string>
     <string name="favorite">Favorite</string>
+    <string name="success_add_fav">Success, Add Favorite</string>
+    <string name="success_remove_fav">Success, Remove Favorite</string>
+
+    //key preferences
+    <string name="reminder_key" translatable="false">reminderPreferencesKey</string>
+
+    <string name="notification_title">Reminder 09.00 AM</string>
+    <string name="notification_message">This is Message Reminder</string>
+
 </resources>

@@ -19,7 +19,7 @@ object RetrofitClient {
             val origin = chain.request()
             val request = origin.newBuilder()
                 .addHeader("Accept", "application/json")
-                .addHeader("Authorization", "token $TOKEN")
+                .addHeader("Authorization", TOKEN)
                 .method(origin.method, origin.body)
                 .build()
             chain.proceed(request)

@@ -17,16 +17,18 @@
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.3535228677379481" />
         <entry key="app/src/main/res/layout/activity_favorite.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2641025641025641" />
+        <entry key="app/src/main/res/layout/activity_reminder.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.67" />
         <entry key="app/src/main/res/layout/fragment_follow.xml" value="0.25" />
         <entry key="app/src/main/res/layout/header_detail_user.xml" value="0.67" />
         <entry key="app/src/main/res/layout/item_user_follow.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_user_search.xml" value="0.121492128678987" />
         <entry key="app/src/main/res/layout/layout_loading_util.xml" value="0.13541666666666666" />
-        <entry key="app/src/main/res/menu/home_menu.xml" value="0.2682291666666667" />
+        <entry key="app/src/main/res/menu/home_menu.xml" value="0.33" />
         <entry key="app/src/main/res/menu/search.xml" value="0.2713541666666667" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.28" />
+        <entry key="app/src/main/res/xml/preferences.xml" value="0.33" />
       </map>
     </option>
   </component>

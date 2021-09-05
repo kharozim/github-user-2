@@ -37,7 +37,6 @@ class FavoriteActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         initToolbar()
-        getData()
         setObserver()
         setView()
 
@@ -110,5 +109,10 @@ class FavoriteActivity : AppCompatActivity() {
     private fun doFilter(text: String) {
         val filtered = listUser.asSequence().filter { it.login.contains(text, true) }.toList()
         adapter.items = filtered
+    }
+
+    override fun onResume() {
+        super.onResume()
+        getData()
     }
 }
