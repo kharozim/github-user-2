@@ -1,5 +1,6 @@
 package com.example.githubuser2.ui.views.reminder
 
+import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -13,8 +14,7 @@ import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.example.githubuser2.R
-import com.example.githubuser2.ui.views.home.MainActivity
-import timber.log.Timber
+import com.example.githubuser2.ui.views.splashscreen.SplashScreenActivity
 import java.util.*
 
 class AlarmReceiver : BroadcastReceiver() {
@@ -22,17 +22,17 @@ class AlarmReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         if (context != null && intent != null) {
             showNotification(context)
-            Timber.tag("cekAlarm").d("alarm : masuk")
         }
     }
 
+    @SuppressLint("UnspecifiedImmutableFlag")
     private fun showNotification(context: Context) {
         val channelId = "Notif_Channel_1"
         val channelName = "AlarmManager channel"
 
-        val intent = Intent(context, MainActivity::class.java)
-       val pendingIntent =
-            PendingIntent.getBroadcast(context, ID_REPEATING, intent,0)
+        val intent = Intent(context, SplashScreenActivity::class.java)
+        val pendingIntent =
+            PendingIntent.getActivity(context, 0, intent, 0)
         val notificationManagerCompat =
             context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
@@ -43,7 +43,7 @@ class AlarmReceiver : BroadcastReceiver() {
             .setColor(ContextCompat.getColor(context, android.R.color.transparent))
             .setVibrate(longArrayOf(1000, 1000, 1000, 1000, 1000))
             .setSound(alarmSound)
-//            .setContentIntent(pendingIntent)
+            .setContentIntent(pendingIntent)
 
         /*
         Android Oreo
@@ -69,6 +69,7 @@ class AlarmReceiver : BroadcastReceiver() {
         notificationManagerCompat.notify(ID_REPEATING, notification)
     }
 
+    @SuppressLint("UnspecifiedImmutableFlag")
     fun setRepeatingAlarm(context: Context) {
 
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
@@ -79,19 +80,18 @@ class AlarmReceiver : BroadcastReceiver() {
         calendar.set(Calendar.MINUTE, 0)
         calendar.set(Calendar.SECOND, 0)
 
-       val pendingIntent = PendingIntent.getBroadcast(context, ID_REPEATING, intent, 0)
+        val pendingIntent = PendingIntent.getBroadcast(context, ID_REPEATING, intent, 0)
         alarmManager.setInexactRepeating(
             AlarmManager.RTC_WAKEUP,
             calendar.timeInMillis,
             AlarmManager.INTERVAL_DAY,
             pendingIntent
         )
-        Timber.tag("cekAlarm").d("setup Alarm : ${calendar.timeInMillis}")
-
         Toast.makeText(context, "Repeating alarm set up", Toast.LENGTH_SHORT).show()
     }
 
 
+    @SuppressLint("UnspecifiedImmutableFlag")
     fun cancelRepeatAlarm(context: Context) {
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, AlarmReceiver::class.java)
@@ -100,11 +100,11 @@ class AlarmReceiver : BroadcastReceiver() {
         pendingIntent.cancel()
 
         alarmManager.cancel(pendingIntent)
-
         Toast.makeText(context, "Repeating alarm dibatalkan", Toast.LENGTH_SHORT).show()
     }
 
 
+    @SuppressLint("UnspecifiedImmutableFlag")
     fun isRepeatAlarmSet(context: Context): Boolean {
         val intent = Intent(context, AlarmReceiver::class.java)
         val requestCode = ID_REPEATING

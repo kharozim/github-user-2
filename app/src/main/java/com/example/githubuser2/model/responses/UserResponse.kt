@@ -23,15 +23,10 @@ data class UserItem(
 )
 
 fun UserItem.toUserEntity(): UserEntity = UserEntity(
-    id ?: 0,
-    name ?: "",
-    login ?: "",
-    publicRepos ?: 0,
-    followers ?: 0,
-    following ?: 0,
-    avatarUrl ?: "",
-    company ?: "",
-    location ?: "",
-    email ?: ""
+    id = id ?: 0,
+    name = name ?: "",
+    login = login ?: "",
+    avatarUrl = avatarUrl ?: "",
+    email = email ?: ""
 )
 

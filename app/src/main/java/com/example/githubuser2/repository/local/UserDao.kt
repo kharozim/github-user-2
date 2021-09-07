@@ -1,7 +1,10 @@
 package com.example.githubuser2.repository.local
 
-import androidx.room.*
-import com.example.githubuser2.model.responses.UserResponse
+import android.database.Cursor
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 
 @Dao
 interface UserDao {
@@ -23,5 +26,8 @@ interface UserDao {
 
     @Query("SELECT * FROM user_entity WHERE id = :userId")
     suspend fun findUserFav(userId: Int): UserEntity?
+
+    @Query("SELECT * FROM user_entity")
+    fun getCursor(): Cursor
 
 }

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">consumerapp</string>
+    <string name="label_home">List User Favorite</string>
+    <string name="image_user">Image User</string>
+    <string name="name">Name :</string>
+    <string name="username">Username :</string>
+</resources>
